@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>🔥</title>
+<style>
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+color:white;
+min-height:100vh;
+overflow-y:auto;
+background:linear-gradient(180deg,#000000,#1a1a1a,#2c2c2c);
+}
+
+/* قلوب */
+.hearts{position:absolute;width:100%;height:100%;z-index:-1;}
+.heart{
+position:absolute;
+font-size:25px;
+animation:float 5s linear infinite;
+}
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-100px);}
+}
+
+/* صندوق */
+.box{
+background:rgba(0,0,0,0.7);
+padding:20px;
+margin:50px auto;
+border-radius:15px;
+width:90%;
+max-width:400px;
+}
+
+/* قلب */
+#heart{
+font-size:120px;
+cursor:pointer;
+animation:pulse 1.5s infinite;
+}
+@keyframes pulse{
+50%{transform:scale(1.3);}
+}
+
+/* رسالة */
+#msg{
+display:none;
+background:white;
+color:black;
+padding:15px;
+border-radius:10px;
+margin-top:20px;
+white-space:pre-wrap;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="box" id="welcome">
+<h2>كل سنه وانتا طيب يا روماااا🫡❤😗🙄</h2>
+<button onclick="goLogin()">دخول</button>
+</div>
+
+<div class="box" id="login" style="display:none;">
+<h3>كلمة السر</h3>
+<input id="pass">
+<button onclick="check()">دخول</button>
+</div>
+
+<div class="box" id="main" style="display:none;">
+<div id="heart">🔥❤️</div>
+<div id="msg"></div>
+<audio id="audio" loop>
+<source src="ssstik.io_1773931929844.mp3">
+</audio>
+</div>
+
+<script>
+const hearts=document.getElementById("hearts");
+for(let i=0;i<25;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="🔥";
+h.style.left=Math.random()*100+"%";
+hearts.appendChild(h);
+}
+
+function goLogin(){
+document.getElementById("welcome").style.display="none";
+document.getElementById("login").style.display="block";
+}
+
+function check(){
+if(document.getElementById("pass").value==="رمرومتي"){
+document.getElementById("login").style.display="none";
+document.getElementById("main").style.display="block";
+}else alert("غلط يا صاحبي 😏");
+}
+
+const text=`كل سنه وانتا طيب يا جميل 
+كل سنه وانتا طيب يا اخويا 
+كل سنه ونتي اجمل اخت🫡
+
+
+عايزه ايييي🤨🤨🤨
+اكتب اللي عايزه براحتييييي🙄🙄🙄🤨🔫🔫🔫
+عايزه تنضربي🤨🤨🤨🤨
+اوعا ياعم الناس اللي هتاخد عيديه وهتعيد بقااااا🙂😂
+اي يصحبي م هتعيدنا بقاااا🤨🙄
+
+كل سنه ونتا طيب يا ثحبيييييي وسنه سعيده عليك🙄
+ابقا البس بقا الحظاظه بكرا اوعا تنسي🤨🤨🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄 الا اموتك🙄🙄🙄🙄
+بس كداااااااااااااااااااااااااعععع
+باي🙄🔫🙂
+
+
+
+خدي خدي فكرتيني هقفل ول اييي🙄🙄🙄🙄🙄🙄
+م قولتلك عايزه تتضربي🙄🙄🙄🙄🙄
+يلا روح بقا🙄🙄🙄
+باي🙄🙄🙄🙄
+متقولش باي 🙄🙄🙄🙄
+عايز تقفل ول ايييي🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄 
+هقتلك 🙄🙄
+حاسبي ع وشك بكرا عشان هعورك🙄🙄🙄🙄🔫🔫
+يلا باي🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙂👏`;
+
+let i=0;
+document.getElementById("heart").onclick=()=>{
+document.getElementById("msg").style.display="block";
+document.getElementById("audio").play();
+function write(){
+if(i<text.length){
+document.getElementById("msg").innerHTML+=text[i];
+i++;
+setTimeout(write,35);
+}}
+write();
+};
+</script>
+
+</body>
+  </html>
